@@ -11,6 +11,6 @@ Use [Android Studio](https://developer.android.com/studio) to build the APP.
 * Kotlin
 * MVVM Pattern
 * Dependency injection with HILT
-* API REST handled by Retrofit
+* API REST handled by [Retrofit](https://square.github.io/retrofit/)
 * Threads with Coroutines
 * Room
