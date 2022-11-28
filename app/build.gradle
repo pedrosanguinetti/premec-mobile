@@ -45,6 +45,14 @@ dependencies {
     //HTTP Client library
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 
+    //Room persistence library: Core
+    def room_version = "2.4.3"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    //Room persistence library: Paging 3 Integration
+    implementation "androidx.room:room-paging:$room_version"
+
     //Testing
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
