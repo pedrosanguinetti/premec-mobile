@@ -10,6 +10,8 @@ import ar.com.premec.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
 
+    //TODO ask for icons. If possible SVG files.
+
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: LoginViewModel
