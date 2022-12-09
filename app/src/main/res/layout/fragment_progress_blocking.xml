@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.splash.SplashFragment">
+    android:background="@color/premec_light_20pct"
+    tools:context=".ui.fragment.dialog.ui.login.ProgressBlockingFragment">
 
     <ProgressBar
         android:id="@+id/progress"
@@ -14,5 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

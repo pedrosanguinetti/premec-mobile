@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="premec_light">#0051CF</color>
+    <color name="premec_light_20pct">#330051CF</color>
     <color name="premec">#00368A</color>
     <color name="premec_dark">#00245C</color>
     <color name="teal_200">#418BFF</color>

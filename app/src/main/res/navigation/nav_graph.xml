@@ -9,11 +9,10 @@
         android:id="@+id/splashFragment"
         android:name="ar.com.premec.ui.fragment.splash.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_loginFragment"
             app:destination="@id/loginFragment"
-            app:launchSingleTop="false"
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -21,5 +20,14 @@
         android:id="@+id/loginFragment"
         android:name="ar.com.premec.ui.fragment.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_progressBlockingFragment"
+            app:destination="@id/progressBlockingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/progressBlockingFragment"
+        android:name="ar.com.premec.ui.fragment.dialog.ui.login.ProgressBlockingFragment"
+        android:label="fragment_progress_blocking"
+        tools:layout="@layout/fragment_progress_blocking" />
 </navigation>
