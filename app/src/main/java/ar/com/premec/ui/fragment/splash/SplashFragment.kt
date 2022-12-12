@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import ar.com.premec.R
 import ar.com.premec.databinding.FragmentSplashBinding
-import ar.com.premec.ui.fragment.splash.SplashViewModel.Resource
+import ar.com.premec.ui.fragment.utils.Result
 
 class SplashFragment : Fragment() {
 
@@ -30,14 +30,14 @@ class SplashFragment : Fragment() {
     private fun setupUI() {
         viewModel.appLoaded.observe(viewLifecycleOwner) { result ->
             when (result) {
-                is Resource.Loading -> {
+                is Result.Loading -> {
                     binding.progress.visibility = View.VISIBLE
                 }
-                is Resource.Success -> {
+                is Result.Success -> {
                     binding.progress.visibility = View.GONE
                     findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
                 }
-                is Resource.Error -> {
+                is Result.Error -> {
                     binding.progress.visibility = View.GONE
                     //TODO show error
                 }

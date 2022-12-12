@@ -5,18 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import ar.com.premec.R
+import androidx.fragment.app.viewModels
 import ar.com.premec.databinding.FragmentLoginBinding
+import ar.com.premec.ui.fragment.dialog.ui.login.ProgressBlockingFragment
+import ar.com.premec.ui.fragment.utils.Result
 
 class LoginFragment : Fragment() {
 
-    //TODO ask for icons. If possible SVG files.
-
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel: LoginViewModel
+
+    private val viewModel: LoginViewModel by viewModels()
+    private val progress by lazy {
+        ProgressBlockingFragment.newInstance()
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,20 +31,30 @@ class LoginFragment : Fragment() {
     }
 
     private fun setupUI() {
+
         binding.btnLogin.setOnClickListener {
-            //TODO Testing a blocking dialog only
-            findNavController().navigate(R.id.action_loginFragment_to_progressBlockingFragment)
+            //TODO pass user and pass from the textfields
+            viewModel.login("Test", "Pass").observe(viewLifecycleOwner) { result ->
+                when (result) {
+                    is Result.Loading -> {
+                        progress.show(
+                            childFragmentManager,
+                            ProgressBlockingFragment.PROGRESS_DIALOG
+                        )
+                    }
+                    is Result.Success -> {
+                        progress.dismiss()
+                    }
+                    is Result.Error -> {
+                        progress.dismiss()
+                    }
+                }
+            }
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    //TODO use HILT to inject this
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
     }
 }
