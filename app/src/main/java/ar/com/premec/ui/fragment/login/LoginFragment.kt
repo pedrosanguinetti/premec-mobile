@@ -1,4 +1,4 @@
-package ar.com.premec.ui.fragment
+package ar.com.premec.ui.fragment.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import ar.com.premec.R
 import ar.com.premec.databinding.FragmentLoginBinding
-import ar.com.premec.ui.fragment.dialog.ui.login.ProgressBlockingFragment
+import ar.com.premec.ui.dialog.ProgressBlockingFragment
 import ar.com.premec.ui.fragment.utils.Result
 
 class LoginFragment : Fragment() {
@@ -44,6 +46,7 @@ class LoginFragment : Fragment() {
                     }
                     is Result.Success -> {
                         progress.dismiss()
+                        findNavController().navigate(R.id.action_loginFragment_to_formsListFragment)
                     }
                     is Result.Error -> {
                         progress.dismiss()

@@ -18,7 +18,16 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="ar.com.premec.ui.fragment.LoginFragment"
+        android:name="ar.com.premec.ui.fragment.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_formsListFragment"
+            app:destination="@id/formsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formsListFragment"
+        android:name="ar.com.premec.ui.fragment.forms.list.FormListFragment"
+        android:label="fragment_forms_list"
+        tools:layout="@layout/fragment_forms_list" />
 </navigation>

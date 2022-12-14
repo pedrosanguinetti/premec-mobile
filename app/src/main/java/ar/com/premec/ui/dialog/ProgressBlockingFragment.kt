@@ -1,4 +1,4 @@
-package ar.com.premec.ui.fragment.dialog.ui.login
+package ar.com.premec.ui.dialog
 
 import android.app.Dialog
 import android.graphics.Color
