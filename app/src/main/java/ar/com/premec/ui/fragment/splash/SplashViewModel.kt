@@ -12,7 +12,7 @@ class SplashViewModel : ViewModel() {
         emit(Result.Loading())
         try {
             //TODO simulate some work, I sleep the thread. It will be removed in the future.
-            Thread.sleep(3000)
+            Thread.sleep(500)
             emit(Result.Success(true))
         } catch (ex: Exception) {
             emit(Result.Error(ex))

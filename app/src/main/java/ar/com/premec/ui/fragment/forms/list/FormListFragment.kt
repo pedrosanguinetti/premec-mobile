@@ -70,6 +70,7 @@ class FormListFragment : Fragment() {
             setPositiveButton(
                 R.string.yes
             ) { _, _ ->
+                findNavController().navigate(R.id.action_formsListFragment_to_loginFragment)
                 //TODO clean credentials
             }
             setNegativeButton(
