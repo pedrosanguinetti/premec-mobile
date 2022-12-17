@@ -10,6 +10,10 @@
     <string name="logout">Cerrar sesión</string>
     <string name="logout_title_dialog">Salir</string>
     <string name="logout_title_messsage">¿Desea cerrar la sesión?</string>
+    <string name="delete_title_dialog">Eliminar formulario</string>
+    <string name="delete_title_messsage">Si el formulario no fue enviado, se perderán los datos cargados</string>
+    <string name="delete_yes">Eliminar</string>
+    <string name="delete_no">Cancelar</string>
     <string name="yes">SI</string>
     <string name="no">NO</string>
 </resources>

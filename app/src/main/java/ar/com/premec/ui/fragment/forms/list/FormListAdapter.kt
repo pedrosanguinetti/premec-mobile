@@ -1,7 +1,9 @@
 package ar.com.premec.ui.fragment.forms.list
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -56,7 +58,30 @@ class FormListAdapter(diffCallback: DiffUtil.ItemCallback<Form>) :
                 lblEmployee.text = "Empleado: ${form.empleado}"
                 lblNumber.text = "Número: ${form.numero}"
                 imgSynk.setImageResource(if (form.synchronized) R.drawable.ic_done_all else R.drawable.ic_schedule)
+                btnDelete.setOnClickListener {
+                    delete(it.context)
+                }
             }
+        }
+
+        private fun delete(context: Context) {
+            val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+            builder.setMessage(R.string.delete_title_messsage)
+                .setTitle(R.string.delete_title_dialog)
+            builder.apply {
+                setPositiveButton(
+                    R.string.delete_yes
+                ) { _, _ ->
+                    //TODO delete form
+                }
+                setNegativeButton(
+                    R.string.delete_no
+                ) { _, _ ->
+                }
+            }
+
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
         }
     }
 }

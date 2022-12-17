@@ -22,12 +22,23 @@
             android:layout_height="match_parent"
             android:padding="10dp">
 
+            <ImageButton
+                android:id="@+id/btnDelete"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/translucent"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_delete"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblNumber" />
+
             <ImageView
                 android:id="@+id/imgSynk"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/lblNumber"
                 tools:src="@drawable/ic_done" />
 
             <TextView
