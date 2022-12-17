@@ -8,4 +8,8 @@
     <string name="splash_title">Splash</string>
     <string name="login_password">Contraseña</string>
     <string name="logout">Cerrar sesión</string>
+    <string name="logout_title_dialog">Salir</string>
+    <string name="logout_title_messsage">¿Desea cerrar la sesión?</string>
+    <string name="yes">SI</string>
+    <string name="no">NO</string>
 </resources>

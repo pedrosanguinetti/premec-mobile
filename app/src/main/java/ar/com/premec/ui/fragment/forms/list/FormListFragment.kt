@@ -7,12 +7,14 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ar.com.premec.R
 import ar.com.premec.databinding.FragmentFormsListBinding
@@ -51,10 +53,33 @@ class FormListFragment : Fragment() {
             }
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                // Validate and handle the selected menu item
+                when (menuItem.itemId) {
+                    R.id.formsListFragment -> {
+                        logOutDialog()
+                    }
+                }
                 return true
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
+    }
+
+    private fun logOutDialog() {
+        val builder: AlertDialog.Builder = AlertDialog.Builder(requireActivity())
+        builder.setMessage(R.string.logout_title_messsage).setTitle(R.string.logout_title_dialog)
+        builder.apply {
+            setPositiveButton(
+                R.string.yes
+            ) { _, _ ->
+                //TODO clean credentials
+            }
+            setNegativeButton(
+                R.string.no
+            ) { _, _ ->
+            }
+        }
+
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 
     private fun setupUI() {
