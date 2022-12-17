@@ -15,6 +15,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import ar.com.premec.R
 import ar.com.premec.databinding.FragmentFormsListBinding
@@ -91,6 +92,18 @@ class FormListFragment : Fragment() {
             viewModel.flow.collectLatest { pagingData ->
                 pagingAdapter.submitData(pagingData)
             }
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            pagingAdapter.loadStateFlow.collectLatest { loadStates ->
+                _binding?.let {
+                    binding.refresh.isRefreshing = loadStates.refresh is LoadState.Loading
+                }
+            }
+        }
+
+        binding.refresh.setOnRefreshListener {
+            pagingAdapter.refresh()
         }
     }
 
