@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "ar.com.premec"
@@ -42,13 +42,15 @@ android {
 dependencies {
 
     //Core
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     //HTTP Client library
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
 
     //Room persistence library: Core
     def room_version = "2.4.3"
@@ -68,6 +70,13 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     // Feature module Support
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    //paging library
+    def paging_version = "3.1.1"
+    implementation "androidx.paging:paging-runtime:$paging_version"
+
+    //Swipe to refresh
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
     //Testing
     testImplementation 'junit:junit:4.13.2'
