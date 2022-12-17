@@ -18,12 +18,16 @@ class FormsPagingSource(
     ): LoadResult<Int, Form> {
         try {
             //TODO pages go from 1 to 3 as it's a test set.
-            val nextPageNumber = params.key ?: 1
-            val forms = formDAO.get(query, nextPageNumber)
+            val page = params.key ?: 1
+            val forms = formDAO.get(query, page)
+            var nextPageNumber: Int? = null
+            if (forms.isNotEmpty()) {
+                nextPageNumber = page + 1
+            }
             return LoadResult.Page(
                 data = forms,
                 prevKey = null, // Only paging forward.
-                nextKey = nextPageNumber + 1
+                nextKey = nextPageNumber
             )
         } catch (e: Exception) {
             //TODO test and handle exceptions on the UI side

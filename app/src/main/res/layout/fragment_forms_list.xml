@@ -7,7 +7,6 @@
     tools:context=".ui.fragment.forms.list.FormListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:background="@color/premec_dark"
         android:id="@+id/rvForms"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

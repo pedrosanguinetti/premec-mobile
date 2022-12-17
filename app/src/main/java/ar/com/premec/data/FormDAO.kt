@@ -9,44 +9,44 @@ class FormDAO {
         when (nextPageNumber) {
             1 -> {
                 return listOf(
-                    Form(1, "1A"),
-                    Form(2, "1B"),
-                    Form(3, "1C"),
-                    Form(4, "1D"),
-                    Form(5, "1E"),
-                    Form(6, "1F"),
-                    Form(7, "1G"),
-                    Form(8, "1H"),
-                    Form(9, "1I"),
-                    Form(10, "1J")
+                    Form(1, "Alta", "Rodrigo Perez", "Marcos Trinche", 34, "24/11", "08:30", true),
+                    Form(2, "Media", "Rodrigo Perez", "Marcos Trinche", 34, "23/11", "09:30", true),
+                    Form(3, "Media", "Rodrigo Perez", "Ramón Ramirez", 34, "25/11", "11:00"),
+                    Form(4, "Alta", "Pablo Bing", "Ramón Ramirez", 34, "22/11", "08:15", true),
+                    Form(5, "Baja", "Rodrigo Perez", "Marcos Trinche", 34, "24/11", "12:30", true),
+                    Form(6, "Alta", "Pablo Bing", "Ramón Ramirez", 34, "24/11", "08:45"),
+                    Form(7, "Media", "Pablo Bing", "Marcos Trinche", 34, "26/11", "07:30", true),
+                    Form(8, "Baja", "Pablo Bing", "Julián A.", 34, "27/11", "06:30"),
+                    Form(9, "Media", "Rodrigo Perez", "Julián A.", 34, "22/11", "14:30"),
+                    Form(10, "Alta", "Rodrigo Perez", "Marcos Trinche", 34, "20/11", "08:15")
                 )
             }
             2 -> {
                 return listOf(
-                    Form(11, "2A"),
-                    Form(12, "2B"),
-                    Form(13, "2C"),
-                    Form(14, "2D"),
-                    Form(15, "2E"),
-                    Form(16, "2F"),
-                    Form(17, "2G"),
-                    Form(18, "2H"),
-                    Form(19, "2I"),
-                    Form(20, "2J")
+                    Form(11, "Alta", "Rodrigo Perez", "Marcos Trinche", 34, "24/11", "08:30"),
+                    Form(12, "Media", "Rodrigo Perez", "Marcos Trinche", 34, "23/11", "09:30", true),
+                    Form(13, "Media", "Rodrigo Perez", "Ramón Ramirez", 34, "25/11", "11:00", true),
+                    Form(14, "Alta", "Pablo Bing", "Ramón Ramirez", 34, "22/11", "08:15"),
+                    Form(15, "Baja", "Rodrigo Perez", "Marcos Trinche", 34, "24/11", "12:30", true),
+                    Form(16, "Alta", "Pablo Bing", "Ramón Ramirez", 34, "24/11", "08:45"),
+                    Form(17, "Media", "Pablo Bing", "Marcos Trinche", 34, "26/11", "07:30", true),
+                    Form(18, "Baja", "Pablo Bing", "Julián A.", 34, "27/11", "06:30"),
+                    Form(19, "Media", "Rodrigo Perez", "Julián A.", 34, "22/11", "14:30", true),
+                    Form(20, "Alta", "Rodrigo Perez", "Marcos Trinche", 34, "20/11", "08:15")
                 )
             }
             3 -> {
                 return listOf(
-                    Form(21, "3A"),
-                    Form(22, "3B"),
-                    Form(23, "3C"),
-                    Form(24, "3D"),
-                    Form(25, "3E"),
-                    Form(26, "3F"),
-                    Form(27, "3G"),
-                    Form(28, "3H"),
-                    Form(29, "3I"),
-                    Form(30, "3J")
+                    Form(21, "Alta", "Rodrigo Perez", "Marcos Trinche", 34, "24/11", "08:30"),
+                    Form(22, "Media", "Rodrigo Perez", "Marcos Trinche", 34, "23/11", "09:30"),
+                    Form(23, "Media", "Rodrigo Perez", "Ramón Ramirez", 34, "25/11", "11:00"),
+                    Form(24, "Alta", "Pablo Bing", "Ramón Ramirez", 34, "22/11", "08:15"),
+                    Form(25, "Baja", "Rodrigo Perez", "Marcos Trinche", 34, "24/11", "12:30"),
+                    Form(26, "Alta", "Pablo Bing", "Ramón Ramirez", 34, "24/11", "08:45"),
+                    Form(27, "Media", "Pablo Bing", "Marcos Trinche", 34, "26/11", "07:30"),
+                    Form(28, "Baja", "Pablo Bing", "Julián A.", 34, "27/11", "06:30"),
+                    Form(29, "Media", "Rodrigo Perez", "Julián A.", 34, "22/11", "14:30"),
+                    Form(30, "Alta", "Rodrigo Perez", "Marcos Trinche", 34, "20/11", "08:15")
                 )
             }
         }

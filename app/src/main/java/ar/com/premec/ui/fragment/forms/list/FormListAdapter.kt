@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import ar.com.premec.R
 import ar.com.premec.data.model.Form
 import ar.com.premec.databinding.ItemFormBinding
 import ar.com.premec.ui.fragment.forms.list.FormListAdapter.FormViewHolder
@@ -49,8 +50,12 @@ class FormListAdapter(diffCallback: DiffUtil.ItemCallback<Form>) :
 
         fun bind(form: Form) {
             binding.apply {
-                lblId.text = form.id.toString()
-                lblTitle.text = form.title
+                //TODO add to string resource
+                lblDate.text = "${form.fecha} ${form.hora} HS"
+                lblAssignedBy.text = "Asignado por: ${form.asignadoPor}"
+                lblEmployee.text = "Empleado: ${form.empleado}"
+                lblNumber.text = "Número: ${form.numero}"
+                imgSynk.setImageResource(if (form.synchronized) R.drawable.ic_done_all else R.drawable.ic_schedule)
             }
         }
     }
